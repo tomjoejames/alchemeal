@@ -8,8 +8,15 @@ RUN npm run build
 
 # Runtime stage
 FROM nginx:alpine
+
+# Remove default config
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Add our config (8080)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy built files
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Cloud Run listens on 8080
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
