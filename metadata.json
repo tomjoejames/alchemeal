@@ -1,0 +1,5 @@
+{
+  "name": "Alchemeal",
+  "description": "A Frutiger Aero themed AI recipe generator that creates personalized recipes based on ingredients, time, and cooking preferences.",
+  "requestFramePermissions": []
+}
